@@ -32,19 +32,19 @@ public class ProductController {
 
     @GetMapping("/products/title/{title}")
     public ResponseEntity getProductFromTitle(@PathVariable("title") String title){
-        ProductResponseDTO response = ProductService.getProductFromTitle(title);
+        ProductResponseDTO response = productService.getProductFromTitle(title);
         return ResponseEntity.ok(response);
     }
 
     @PostMapping("/products")
     public ResponseEntity createProduct(@RequestBody ProductRequestDTO productRequestDTO){
-        ProductResponseDTO response = ProductService.createProduct(productRequestDTO);
+        ProductResponseDTO response = productService.createProduct(productRequestDTO);
         return ResponseEntity.ok(response);
     }
 
     @DeleteMapping("/products/{id}")
     public ResponseEntity deleteProduct(@PathVariable("id")int id){
-        ProductResponseDTO response = ProductService.deleteProduct(id);
+        ProductResponseDTO response = productService.deleteProduct(id);
         return ResponseEntity.ok(response);
     }
 
