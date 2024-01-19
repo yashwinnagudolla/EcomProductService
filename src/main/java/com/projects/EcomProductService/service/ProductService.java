@@ -11,6 +11,5 @@ public interface ProductService {
     ProductResponseDTO getProductFromTitle(String title);
     ProductResponseDTO createProduct(ProductRequestDTO productRequestDTO);
     ProductResponseDTO deleteProduct(int id);
-
     Product updateProduct(int id, Product product);
 }
