@@ -1,8 +1,6 @@
 package com.projects.EcomProductService.mapper;
 
-import com.projects.EcomProductService.dto.FakeStoreProductResponseDTO;
-import com.projects.EcomProductService.dto.ProductListResponseDTO;
-import com.projects.EcomProductService.dto.ProductResponseDTO;
+import com.projects.EcomProductService.dto.*;
 import com.projects.EcomProductService.model.Product;
 
 import java.util.List;
@@ -37,6 +35,12 @@ public class ProductMapper {
         response.setImage(fakeStoreProductResponseDTO.getImage());
         return response;
     }
-
-    public static Fa
+    public static FakeStoreProductRequestDTO productRequestDTOtoFakeStoreProductRequestDto(ProductRequestDTO productRequestDTO){
+        FakeStoreProductRequestDTO response = new FakeStoreProductRequestDTO();
+        response.setCategory(productRequestDTO.getCategory());
+        response.setDescription(productRequestDTO.getDescription());
+        response.setTitle(productRequestDTO.getTitle());
+        response.setImage(productRequestDTO.getImage());
+        response.setPrice(productRequestDTO.getPrice());
+    }
 }

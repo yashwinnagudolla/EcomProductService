@@ -32,8 +32,26 @@ public class FakeStoreProductServiceImpl implements ProductService{
         return products;
     }
 
-    public ProductResponseDTO getProductById(ProductRequestDTO productRequestDTO){
-        FakeStoreProductRequestDTO request = ProductMapper.
-        FakeStoreProductResponseDTO response = fakeStoreAPIClient.getProductById()
+    public ProductResponseDTO getProductById(int id){
+        FakeStoreProductResponseDTO response = fakeStoreAPIClient.getProductById(id);
+        return ProductMapper.fakeStoreProductResponseDTOtoProductResponseDTO(response);
+    }
+
+    public ProductResponseDTO createProduct(ProductRequestDTO productRequestDTO){
+        FakeStoreProductRequestDTO requestObject = ProductMapper.productRequestDTOtoFakeStoreProductRequestDto(productRequestDTO);
+        return ProductMapper.fakeStoreProductResponseDTOtoProductResponseDTO(fakeStoreAPIClient.createProduct(requestObject));
+    }
+
+    public ProductResponseDTO deleteProduct(int id){
+        FakeStoreProductResponseDTO response = fakeStoreAPIClient.deleteProduct(id);
+        return ProductMapper.fakeStoreProductResponseDTOtoProductResponseDTO(response);
+    }
+
+    public ProductResponseDTO getProductFromTitle(String name){
+        return null;
+    }
+
+    public Product updateProduct(int id,Product product){
+        return product;
     }
 }
