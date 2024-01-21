@@ -17,11 +17,6 @@ public class FakeStoreProductServiceImpl implements ProductService{
         this.restTemplateBuilder = restTemplateBuilder;
         this.fakeStoreAPIClient = fakeStoreAPIClient;
     }
-//    ProductResponseDTO getProductById(int id);
-//    ProductResponseDTO getProductFromTitle(String title);
-//    ProductResponseDTO createProduct(ProductRequestDTO productRequestDTO);
-//    ProductResponseDTO deleteProduct(int id);
-//    Product updateProduct(int id, Product product);
 
     public ProductListResponseDTO getAllProducts(){
         List<FakeStoreProductResponseDTO> response = fakeStoreAPIClient.getAllProducts();
