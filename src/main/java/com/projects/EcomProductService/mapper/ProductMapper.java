@@ -1,5 +1,6 @@
 package com.projects.EcomProductService.mapper;
 
+import com.projects.EcomProductService.dto.FakeStoreProductResponseDTO;
 import com.projects.EcomProductService.dto.ProductListResponseDTO;
 import com.projects.EcomProductService.dto.ProductResponseDTO;
 import com.projects.EcomProductService.model.Product;
@@ -25,4 +26,17 @@ public class ProductMapper {
         }
         return response;
     }
+
+    public static ProductResponseDTO fakeStoreProductResponseDTOtoProductResponseDTO(FakeStoreProductResponseDTO fakeStoreProductResponseDTO){
+        ProductResponseDTO response = new ProductResponseDTO();
+        response.setId(fakeStoreProductResponseDTO.getId());
+        response.setCategory(fakeStoreProductResponseDTO.getCategory());
+        response.setDescription(fakeStoreProductResponseDTO.getDescription());
+        response.setPrice(fakeStoreProductResponseDTO.getPrice());
+        response.setTitle(fakeStoreProductResponseDTO.getTitle());
+        response.setImage(fakeStoreProductResponseDTO.getImage());
+        return response;
+    }
+
+    public static Fa
 }
