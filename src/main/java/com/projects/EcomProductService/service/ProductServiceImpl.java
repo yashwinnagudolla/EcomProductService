@@ -50,8 +50,9 @@ public class ProductServiceImpl implements ProductService{
     }
 
     public ProductResponseDTO getProductFromTitle(String title){
-        Product product = productRepository.findByTitle(title);
-        return ProductMapper.productToProductResponseDto(product);
+//        Product product = productRepository.findByTitle(title);
+//        return ProductMapper.productToProductResponseDto(product);
+        return null;
 
     }
 
