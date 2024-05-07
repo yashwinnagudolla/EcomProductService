@@ -37,6 +37,13 @@ public class FakeStoreAPIClient {
         return response.getBody();
     }
 
+    public FakeStoreProductResponseDTO getProductFromTitle(String title){
+        String getProductFromTitleURL = fakeStoreAPIURL + fakeStoreAPIPathProduct + "?title=" + title;
+        RestTemplate restTemplate = restTemplateBuilder.build();
+        ResponseEntity<FakeStoreProductResponseDTO> response = restTemplate.getForEntity(getProductFromTitleURL, FakeStoreProductResponseDTO.class);
+        return response.getBody();
+    }
+
     public FakeStoreProductResponseDTO createProduct(FakeStoreProductRequestDTO product){
         String createProductURL = fakeStoreAPIURL + fakeStoreAPIPathProduct;
         RestTemplate restTemplate = restTemplateBuilder.build();
