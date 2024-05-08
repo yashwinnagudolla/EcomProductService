@@ -6,6 +6,7 @@ import com.EcomProductService.ProductService.dto.ProductResponseDTO;
 import com.EcomProductService.ProductService.model.Product;
 import com.EcomProductService.ProductService.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +21,7 @@ public class ProductController {
     private ProductService productService;
 
     @Autowired
-    public ProductController(ProductService productService) {
+    public ProductController(@Qualifier("fakeStoreProductService")ProductService productService) {
         this.productService = productService;
     }
 

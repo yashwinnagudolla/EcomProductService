@@ -4,6 +4,7 @@ import com.EcomProductService.ProductService.dto.*;
 import com.EcomProductService.ProductService.model.Product;
 
 import java.util.List;
+import java.util.UUID;
 
 public class ProductMapper {
     public static FakeStoreProductRequestDTO productRequestToFakeStoreProductRequest(ProductRequestDTO productRequestDTO){
@@ -51,6 +52,14 @@ public class ProductMapper {
         productResponseDTO.setDescription(p.getDescription());
         productResponseDTO.setCategory(p.getCategory().getCategoryName());
         return productResponseDTO;
+    }
+
+    public static int convertUUIDtoInt(UUID id){
+        return Integer.parseInt(id.toString());
+    }
+
+    public static UUID convertIntToUUID(int id){
+        return UUID.fromString(String.valueOf(id));
     }
 }
 

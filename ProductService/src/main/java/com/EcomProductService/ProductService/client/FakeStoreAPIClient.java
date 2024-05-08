@@ -13,14 +13,15 @@ import java.util.List;
 @Component
 public class FakeStoreAPIClient {
     private RestTemplateBuilder restTemplateBuilder;
-    @Value("${fakeStore.api.url}")
+    @Value("${fakestore.api.url}")
     private String fakeStoreAPIURL;
-    @Value("${fakeStore.api.path.product}")
+    @Value("${fakestore.api.path.product}")
     private String fakeStoreAPIPathProduct;
 
     public FakeStoreAPIClient(RestTemplateBuilder restTemplateBuilder) {
         this.restTemplateBuilder = restTemplateBuilder;
     }
+
 
     public List<FakeStoreProductResponseDTO> getProducts() {
         String getAllProductsURL = fakeStoreAPIURL + fakeStoreAPIPathProduct;

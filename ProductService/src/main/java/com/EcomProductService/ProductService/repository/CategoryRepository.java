@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface CategoryRepository extends JpaRepository<Category, UUID>{
+public interface CategoryRepository extends JpaRepository<Category, Integer>{
     Category findByCategoryName(String categoryName);
     Category findByCategoryNameAndDescription(String categoryName, String description);
     Category findByCategoryNameOrDescription(String categoryName, String description);

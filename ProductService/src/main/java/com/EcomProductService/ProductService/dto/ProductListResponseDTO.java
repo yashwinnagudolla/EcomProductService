@@ -8,7 +8,6 @@ import java.util.List;
 
 @Getter
 @Setter
-
 public class ProductListResponseDTO {
     private List<ProductResponseDTO> products;
     public ProductListResponseDTO() {
