@@ -48,14 +48,14 @@ public class FakeStoreAPIClient {
     public FakeStoreProductResponseDTO createProduct(FakeStoreProductRequestDTO product){
         String createProductURL = fakeStoreAPIURL + fakeStoreAPIPathProduct;
         RestTemplate restTemplate = restTemplateBuilder.build();
-        ResponseEntity<FakeStoreProductResponseDTO> response = restTemplate.getForEntity(createProductURL, FakeStoreProductResponseDTO.class);
+        ResponseEntity<FakeStoreProductResponseDTO> response = restTemplate.postForEntity(createProductURL,product, FakeStoreProductResponseDTO.class);
         return response.getBody();
     }
 
     public FakeStoreProductResponseDTO updateProduct(int productId, FakeStoreProductRequestDTO product){
         String updateProductURL = fakeStoreAPIURL + fakeStoreAPIPathProduct + "/" + productId;
         RestTemplate restTemplate = restTemplateBuilder.build();
-        ResponseEntity<FakeStoreProductResponseDTO> response = restTemplate.getForEntity(updateProductURL, FakeStoreProductResponseDTO.class);
+        ResponseEntity<FakeStoreProductResponseDTO> response = restTemplate.postForEntity(updateProductURL,product, FakeStoreProductResponseDTO.class);
         return response.getBody();
     }
 

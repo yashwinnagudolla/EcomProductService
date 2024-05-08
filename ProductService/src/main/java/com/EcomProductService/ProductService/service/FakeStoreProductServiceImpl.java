@@ -34,8 +34,9 @@ public class FakeStoreProductServiceImpl implements ProductService{
     }
     @Override
     public ProductResponseDTO getProductFromTitle(String title) {
-        FakeStoreProductResponseDTO fakeStoreProductResponseDTO = fakeStoreAPIClient.getProductFromTitle(title);
-        return ProductMapper.fakeProductResponseToProductResponse(fakeStoreProductResponseDTO);
+        //FakeStoreProductResponseDTO fakeStoreProductResponseDTO = fakeStoreAPIClient.getProductFromTitle(title);
+        //return ProductMapper.fakeProductResponseToProductResponse(fakeStoreProductResponseDTO);
+        return null;
     }
 
     @Override
